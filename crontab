@@ -1,0 +1,8 @@
+# Edit this file to introduce tasks to be run by cron.
+#
+# m h  dom mon dow   command
+0 0 * * * /scripts/snapraidsync.sh
+0 2 * * * /scripts/snapraidcheck.sh
+0 8 * * * /scripts/snapraidscrub.sh
+0 20 * * * /scripts/smartcheck.sh
+0 18 * * * /scripts/rclone.sh
