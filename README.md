@@ -60,4 +60,6 @@ Edit via
 
 **Example at** /crontab
 
+You can read your crontab and check it with my little crontab-reader.sh script ;)
+
 
