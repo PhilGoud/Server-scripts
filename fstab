@@ -22,5 +22,7 @@ UUID={B2 disk UUID} /mnt/disk-B2  ext4     auto,nofail,rw    0   1
 UUID={B3 disk UUID} /mnt/disk-B3  ext4     auto,nofail,rw    0   1
 UUID={B4 disk UUID} /mnt/disk-B4  ext4     auto,nofail,rw    0   1
 
-## MERGERFS (creation of CAKE volume, composed of all volumes mounted in /mnt that start with "disk")
-/mnt/disk*  /mnt/CAKE  fuse.mergerfs direct_io,defaults,nonempty,allow_other,fsname=CAKE 0 0
+## MERGERFS (creation of CAKE and BOREALIS volumes, composed of volumes mounted in /mnt that start with "disk-X")
+/mnt/disk-A*  /mnt/CAKE  fuse.mergerfs direct_io,defaults,nonempty,allow_other,fsname=CAKE 0 0
+/mnt/disk-B*  /mnt/BOREALIS  fuse.mergerfs direct_io,defaults,nonempty,allow_other,fsname=CAKE 0 0
+
