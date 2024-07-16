@@ -16,17 +16,26 @@ I use mergerfs to pool the disks in the 2 docks composed of 4 hard-drives
 One dock is name CAKE, the other one is used for cold redundancy and is called BOREALIS
 They are mounted via fstab to /mnt/disk-A1 to /mnt/disk-A4 and /mnt/disk-B1 to /mnt/disk-B4
 Letter is the dock identifier and number is the disk position from left to right
+
+
 **Example** : fstab
+
 **Location on my server** : /etc/fstab
 
 ### SMART state
 My disks may one day fail, so we will use SMART to get their state everyday
+
+
 **script** smartcheck.sh
+
 **Location on my server** : /scripts/
 
 ### Archive Backup
 I use Wasabi as a storage for my backups with rclone service
+
+
 **script** rclone.sh
+
 **Location on my server** : /scripts/
 
 ### Sync CAKE > BOREALIS
@@ -45,12 +54,17 @@ That's why folders can be or NOT be checked for data loss
 
 There is a bit of terminal verbose just to check everything is alright but as specified, Telegram notification during checks and at the end are the true purpose.
 
+
 **scripts** rsync.sh & rsync-delete.sh
+
 **Location on my server** : /scripts/
 
 ### Disk usage
 I may see some space left in CAKE but one of the drive is full, that's why i have a daily notification and an alert if disk is used at more than 90%
+
+
 **scripts** diskusage.sh & diskfull-alert.sh
+
 **Location on my server** : /scripts/
 
 ## Torrent
@@ -67,7 +81,10 @@ Those 4 lines can be changed :
 IMPORTANT : stop Transmission before changing those lines or it will overwrite config changes at shutdown (took me too much time to understand that, drove me crazy)
 
 I will use a script at launch to check that torrent notifications are still active as I don't trust anything in life
+
+
 **script** torrentdone.sh
+
 **Location on my server** : /DATA/AppData/transmission/config
 
 
@@ -75,10 +92,14 @@ I will use a script at launch to check that torrent notifications are still acti
 Everything maintenance-related is started via crontab. 
 Edit via 
   sudo crontab -e
+  
 **Example** crontab
 
 ### Tool 
 You can read your crontab and check it with my little script ;)
+
+
 **script** crontab-reader.sh
+
 **Location on my server** : /scripts/
 
