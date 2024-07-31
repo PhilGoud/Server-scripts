@@ -1,28 +1,24 @@
 #!/bin/bash
 
-# This script checks the status of multiple websites/services and sends a Telegram notification
-# if any of their statuses change. It uses curl to check if each URL is reachable and compares
-# the current status with the previous status stored in a log file.
-
 # Define the list of names and URLs to check
 declare -A SITES
 SITES=(
-    ["🎟️ Jellyfin"]="http://192.168.1.10:8096"
     ["🎟️ Plex"]="http://192.168.1.10:32400"
     ["📚 Calibre Web"]="http://192.168.1.10:8083"
     ["🔄 Syncthing"]="http://192.168.1.10:8384"
-    ["📷 Immich"]="http://192.168.1.10:2283"
-    ["🤝 PairDrop"]="http://192.168.1.10:6473"
-    ["🧊 Companion Cube"]="http://192.168.1.10:333"
+    ["📷 Immich"]="http://192.168.1.10:2284"
     ["🌍 JDownloader"]="http://192.168.1.10:5801"
     ["🏴‍☠ Transmission"]="http://192.168.1.10:9091"
     ["🕵🏻 Prowlarr"]="http://192.168.1.10:9696"
     ["🎬 Radarr"]="http://192.168.1.10:7878"
     ["💬 Bazarr"]="http://192.168.1.10:6767"
-    ["💿 Lidarr"]="http://192.168.1.10:36975"
     ["📺 Sonarr"]="http://192.168.1.10:8989"
-    ["🏚️ Home Automation"]="http://192.168.1.10:8123"
-    ["🛡️ Adguard DNS"]="http://192.168.1.10:8080"
+    ["🏚️ Home Assistant"]="http://192.168.1.10:8123"
+    ["🛡️ Adguard DNS"]="http://192.168.1.10:3000"
+    ["📡 Wiregard VPN"]="http://192.168.1.10:51821"
+    ["🌐 ASoundMR"]="https://asoundmr.com"
+    ["🌐 Goud.So"]="https://goud.so"
+    ["🌐 So Goud Home"]="https://h.goud.so"
 )
 
 # File to store the statuses
@@ -30,8 +26,8 @@ LOG_FILE="/DATA/log/upcheck.txt"
 TEMP_FILE="/DATA/log/upcheck-temp.txt"
 
 # Telegram bot details
-TOKEN="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-CHAT_ID="XXXXXXXXXXXXXX"
+TOKEN="HERE_YOUR_TELEGRAM_TOKEN"
+CHAT_ID="HERE_YOUR_CHATID"
 
 # Function to check if a website is up
 check_site() {

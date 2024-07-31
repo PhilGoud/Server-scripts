@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "
+sudo /mnt/CAKE/Kiwix/kiwix-zim-updater/kiwix-zim-updater.sh -d -c -f /mnt/CAKE/Kiwix/ &> /DATA/log/zimupdate.txt
+
