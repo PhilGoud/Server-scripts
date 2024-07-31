@@ -18,7 +18,7 @@ They are mounted via fstab to /mnt/disk-A1 to /mnt/disk-A4 and /mnt/disk-B1 to /
 Letter is the dock identifier and number is the disk position from left to right
 
 
-**Example** : fstab
+**Example** : fstab.txt
 
 **Location on my server** : /etc/fstab
 
@@ -92,14 +92,10 @@ I will use a script at launch to check that torrent notifications are still acti
 Everything maintenance-related is started via crontab. 
 Edit via 
   sudo crontab -e
-  
-**Example** crontab
+**example** crontab.txt
 
-### Tool 
-You can read your crontab and check it with my little script ;)
-
-**script** /tools/crontab-reader.sh
-
+I can read a human-friendly version with a script
+**script** tool/crontab.sh
 **Location on my server** : /scripts/
 
 ##Tools
