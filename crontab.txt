@@ -1,0 +1,34 @@
+# Edit this file to introduce tasks to be run by cron.
+#
+# DISQUES DURS
+# m h  dom mon dow   command
+* * * * * /scripts/networkalert.sh
+*/5 * * * * /scripts/tempalert.sh
+*/5 * * * * /scripts/memalert.sh
+*/15 * * * * /scripts/tempalertm73.sh
+0 15 * * * /scripts/tempcheck.sh
+0 20 * * * /scripts/smartcheck.sh
+15 3 * * * /scripts/balanceCAKE.sh
+15 4 * * * /scripts/balanceBOREALIS.sh
+#
+# Wasabi BACKUP
+# m h  dom mon dow   command
+0 */6 * * * /scripts/rclone.sh
+0 6 1 * * /scripts/rclonetotal.sh
+#
+#RSYNC BACKUP
+0 */4 * * * /scripts/rsync-delete.sh
+#
+#Archives Kiwix le premier jour du mois à midi
+0 12 1 * * /scripts/zimupdate.sh
+
+#Nettoyage
+0 0 * * * /scripts/cleaner.sh
+#
+#Podcasts
+*/15 * * * * /scripts/Podcasts/ASoundMR.sh
+*/15 * * * * /scripts/Podcasts/UADV.sh
+*/15 * * * * /scripts/Podcasts/Aperoriginale.sh
+
+#Alertes down
+*/15 * * * * /scripts/upcheck.sh

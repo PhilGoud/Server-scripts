@@ -1,0 +1,43 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# systemd generates mount units based on this file, see systemd.mount(5).
+# Please run 'systemctl daemon-reload' after making changes here.
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda1 during installation
+UUID=8b95f400-8371-4527-9f9d-a9e19c0c5d78 /               ext4    errors=remount-ro 0       1
+# swap was on /dev/sda5 during installation
+UUID=97333c0b-0c52-4d10-9152-c5eadf3e0eab none            swap    sw              0       0
+
+
+# EXTERNE
+
+##TRASH
+UUID=334d1a22-d653-4798-8272-ee066c1125f2 /mnt/TRASH   ext4     auto,nofail,rw    0   1
+
+## DOCK-A
+UUID=6c1cca7d-8d5f-4780-a73c-96ca3ad24e52 /mnt/disk-A1  ext4     auto,nofail,rw    0   1
+UUID=aa027d4b-bd0f-4f7f-834b-d5d0dba9210b /mnt/disk-A2  ext4     auto,nofail,rw    0   1
+UUID=c792742e-4f25-46fe-b3d5-d664c9ffb657 /mnt/disk-A3  ext4     auto,nofail,rw    0   1
+UUID=e0ac4d41-f848-49e2-aa7b-605c7ad1172a /mnt/disk-A4  ext4     auto,nofail,rw    0   1
+
+
+
+## DOCK-B
+UUID=621771c2-ee14-4b80-af74-a139ca6873e5 /mnt/disk-B1  ext4  auto,nofail,rw    0   1
+UUID=d0ca031f-c4eb-44f4-9a99-193a1491c002 /mnt/disk-B2  ext4  auto,nofail,rw	   0   1
+UUID=b78fa7ee-9ae1-49cb-a00d-ae519b631d89 /mnt/disk-B3  ext4  auto,nofail,rw	   0   1
+UUID=096caa25-5c3f-43c2-9240-bd38d12da153 /mnt/disk-B4  ext4  auto,nofail,rw       0   1
+
+UUID=372fd26d-86ee-4680-bcb2-c42cdceca116 /mnt/Redscape  ext4  auto,nofail,rw    0   1
+
+
+
+## MERGERFS (création du volume CAKE, composé de DOCK-A et BOREALIS, composé de DOCK-B)
+/mnt/disk-A*  /mnt/CAKE  fuse.mergerfs direct_io,defaults,nonempty,allow_other,fsname=CAKE 0 0
+/mnt/disk-B*  /mnt/BOREALIS  fuse.mergerfs direct_io,defaults,nonempty,allow_other,fsname=BOREALIS 0 0
+
