@@ -98,8 +98,12 @@ Edit via
 ### Tool 
 You can read your crontab and check it with my little script ;)
 
-
-**script** crontab-reader.sh
+**script** /tools/crontab-reader.sh
 
 **Location on my server** : /scripts/
+
+##Tools
+I did a small selection of script tools to use when I need them
+From movies organizations to crawl and download, not forgetting about following how a log file is doing, you may need one of them one day, do not hesitate to read them
+**Location on my server** : /scripts/tools/
 
