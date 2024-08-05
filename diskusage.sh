@@ -3,8 +3,8 @@
 # Ensure necessary packages like 'df' and 'lsblk' are available
 
 # Configuration parameters
-TOKEN="HERE_YOUR_TELEGRAM_TOKEN"  # Telegram bot token
-CHAT_ID="HERE_YOUR_CHATID"  # Telegram chat ID
+TOKEN="YOUR_TELEGRAM_TOKEN_HERE"  # Telegram bot token
+CHAT_ID="TELEGRAM_CHATID_HERE"  # Telegram chat ID
 
 # Initialize variables for categorized disks
 system_disks=""
@@ -90,7 +90,7 @@ fi
 if [ -n "$sorted_borealis_disks" ]; then
   TELEGRAM="$TELEGRAM
 
-❄️ BOREALIS:$sorted_borealis_disks"
+🧊 BOREALIS:$sorted_borealis_disks"
 fi
 
 if [ -n "$sorted_other_disks" ]; then

@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#Telegram config
-	TOKEN="HERE_YOUR_TELEGRAM_TOKEN"
-	CHAT_ID="HERE_YOUR_CHATID"
-
 # Vérifie l'utilisation de la mémoire en pourcentage
 memory_usage=$(free | awk '/Mem:/ { printf("%.0f"), $3/$2*100 }')
 
@@ -17,9 +13,13 @@ if [ "$memory_usage" -gt 90 ]; then
     # Lancer le script startdockers.sh
     /scripts/startdockers.sh
     
-    
+    #Telegram notif
 
-	curl -s -X POST https://api.telegram.org/bot$TOKEN/sendMessage -d chat_id=$CHAT_ID -d text="RAM à $memory_usage%
+	TOKEN="YOUR_TELEGRAM_TOKEN_HERE"
+
+	CHAT_ID="TELEGRAM_CHATID_HERE"
+
+	curl -s -X POST https://api.telegram.org/bot$TOKEN/sendMessage -d chat_id=$CHAT_ID -d text="❗ RAM à $memory_usage%
     Les dockers non essentiels ont été relancés" > /dev/null
     
 else

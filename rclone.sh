@@ -65,8 +65,8 @@ echo "Fin à $(date +"%H:%M:%S")" &>> /DATA/log/rclonelog.txt
 #on récupère le contenu du rclonelog
 TELEGRAM=`cat /DATA/log/rclonelog.txt`
 #les identifiants nécéssaires à l'envoi du message
-TOKEN="HERE_YOUR_TELEGRAM_TOKEN"
-CHAT_ID="HERE_YOUR_CHATID"
+TOKEN="YOUR_TELEGRAM_TOKEN_HERE"
+CHAT_ID="TELEGRAM_CHATID_HERE"
 
 #Verification du nombre de caractères (limite de 1024 sur Telegram)
 LENGTH=${#TELEGRAM}

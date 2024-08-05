@@ -4,8 +4,8 @@
 LOG_FILE="/DATA/log/disk_usage_log.txt"  # Path to the log file to store disk usage states
 TEMP_FILE="/DATA/log/disk_usage_temp.txt"  # Path to the temporary log file
 THRESHOLD=90  # Disk usage percentage threshold for alert
-TOKEN="HERE_YOUR_TELEGRAM_TOKEN"  # Telegram bot token
-CHAT_ID="HERE_YOUR_CHATID"  # Telegram chat ID
+TOKEN="YOUR_TELEGRAM_TOKEN_HERE"  # Telegram bot token
+CHAT_ID="TELEGRAM_CHATID_HERE"  # Telegram chat ID
 
 # Disks to monitor (add specific disks along with generic ones)
 DISKS=("/mnt/CAKE" "/mnt/BOREALIS" "/dev/sda1" $(ls /dev/sd[b-z] /dev/sd[b-z][b-z] 2>/dev/null))
@@ -42,7 +42,7 @@ do
 done
 
 # Initialize a variable to store the Telegram message
-TELEGRAM="🚨 DISK USAGE ALERT 💽"
+TELEGRAM=""
 changed=false
 
 # Read the previous statuses and compare with the new ones
@@ -56,12 +56,12 @@ if [[ -e "$LOG_FILE" ]]; then
         if [ ! -z "$new_usage" ]; then
             disk_name=$(format_disk_name "$disk")
             if [ "$new_usage" -ge "$THRESHOLD" ] && [ "$old_usage" -lt "$THRESHOLD" ]; then
-                TELEGRAM+="
-$disk_name usage is at ${new_usage}%"
+                TELEGRAM+="⚠️ Disk alert 💽
+$disk_name usage is at ${new_usage}% 🚨"
                 changed=true
             elif [ "$new_usage" -lt "$THRESHOLD" ] && [ "$old_usage" -ge "$THRESHOLD" ]; then
-                TELEGRAM+="
-$disk_name usage is now at ${new_usage}% - resolved"
+                TELEGRAM+="ℹ️ Disk info 💽
+$disk_name usage is now at ${new_usage}% ✅"
                 changed=true
             fi
         fi

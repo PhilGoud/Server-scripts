@@ -6,10 +6,10 @@
 # Parameters
 LOG_FILE="/DATA/log/balanceborealis.txt"  # Path to the main log file
 TEMP_LOG_FILE="/DATA/log/balanceborealistemp.txt"  # Path to the temporary log file
-TOKEN="HERE_YOUR_TELEGRAM_TOKEN"  # Telegram bot token
-CHAT_ID="HERE_YOUR_CHATID"  # Telegram chat ID
+TOKEN="YOUR_TELEGRAM_TOKEN_HERE"  # Telegram bot token
+CHAT_ID="TELEGRAM_CHATID_HERE"  # Telegram chat ID
 FOLDER="/mnt/BOREALIS/"
-NAME="BOREALIS"
+NAME="🧊 BOREALIS"
 NUMBER_OF_DISKS=4
 
 # Start of the backup process

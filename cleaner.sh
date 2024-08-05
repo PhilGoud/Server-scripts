@@ -3,8 +3,8 @@
 echo "🧹CLEANER" &> /DATA/log/cleanerlog.txt
 sudo find "/DATA/AppData/plex/config/Library/Application Support/Plex Media Server/Cache/PhotoTranscoder" -name "*.jpg" -type f -mtime +3 -delete &>> /DATA/log/cleanerlog.txt
 echo "Vidange des pochettes Plex ✅" &>> /DATA/log/cleanerlog.txt
-sudo journalctl --vacuum-size=0M &>> /DATA/log/cleanerlog.txt
-echo "Vidange des journaux ✅" &>> /DATA/log/cleanerlog.txt
+sudo find /var/log/ -type f -exec rm {} + &>> /DATA/log/cleanerlog.txt
+echo "Vidange des logs ✅" &>> /DATA/log/cleanerlog.txt
 sudo service casaos stop
 sudo /scripts/stopdockers.sh
 sudo mount -a
@@ -13,10 +13,12 @@ sudo /scripts/startdockers.sh
 echo "Redémarrer CasaOS, dockers et remount ✅" &>> /DATA/log/cleanerlog.txt
 sudo trash-empty 7
 echo "Vider la corbeille ✅" &>> /DATA/log/cleanerlog.txt
+sudo rsync -avP /scripts/ /mnt/CAKE/Misc/scripts/
 sudo crontab -l > /mnt/CAKE/Misc/crontab.txt
 sudo rsync -avP /etc/fstab /mnt/CAKE/Misc/fstab.txt
 sudo rsync -avP /etc/motd /mnt/CAKE/Misc/motd.txt
 sudo rsync -avP /etc/sudoers.lecture /mnt/CAKE/Misc/sudoers.lecture.txt
+sudo rsync -avP /home/phil_goud/.bashrc /mnt/CAKE/Misc/alias.txt
 echo "Sauvegarder personnalisation Chell ✅" &>> /DATA/log/cleanerlog.txt
 sudo apt-get update &> /DATA/log/cleanerlog-upgrade.txt
 sudo apt-get upgrade &>> /DATA/log/cleanerlog-upgrade.txt
@@ -28,8 +30,8 @@ echo "Mise à jour des paquets ✅" &>> /DATA/log/cleanerlog.txt
 #on récupère le contenu du rclonelog
 TELEGRAM=`cat /DATA/log/cleanerlog.txt`
 #les identifiants nécéssaires à l'envoi du message
-TOKEN="HERE_YOUR_TELEGRAM_TOKEN"
-CHAT_ID="HERE_YOUR_CHATID"
+TOKEN="YOUR_TELEGRAM_TOKEN_HERE"
+CHAT_ID="TELEGRAM_CHATID_HERE"
 
 #Verification du nombre de caractères (limite de 1024 sur Telegram)
 LENGTH=${#TELEGRAM}

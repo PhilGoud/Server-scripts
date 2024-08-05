@@ -8,8 +8,8 @@ downloadlimit=6144 # en KB
 uploadlimit=5048 # en KB
 STATE_FILE="/DATA/log/networkalertstate.txt" # Fichier pour stocker l'état des alertes
 # Telegram
-TOKEN="HERE_YOUR_TELEGRAM_TOKEN"
-CHAT_ID="HERE_YOUR_CHATID"
+TOKEN="YOUR_TELEGRAM_TOKEN_HERE"
+CHAT_ID="TELEGRAM_CHATID_HERE"
 
 # Lecture de l'état actuel des alertes depuis le fichier
 if [[ -f "$STATE_FILE" ]]; then

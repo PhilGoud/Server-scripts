@@ -59,7 +59,7 @@ fi
 if [ -n "$sorted_borealis_disks" ]; then
   TELEGRAM="$TELEGRAM
 
-❄️ BOREALIS:$sorted_borealis_disks"
+🧊 BOREALIS:$sorted_borealis_disks"
 fi
 
 if [ -n "$sorted_other_disks" ]; then
@@ -69,6 +69,6 @@ Other Disks:$sorted_other_disks"
 fi
 
 # Send the Telegram notification
-TOKEN="HERE_YOUR_TELEGRAM_TOKEN"
-CHAT_ID="HERE_YOUR_CHATID"
+TOKEN="YOUR_TELEGRAM_TOKEN_HERE"
+CHAT_ID="TELEGRAM_CHATID_HERE"
 curl -s -X POST https://api.telegram.org/bot$TOKEN/sendMessage -d chat_id=$CHAT_ID -d text="$TELEGRAM" > /dev/null

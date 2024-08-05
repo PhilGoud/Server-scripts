@@ -6,10 +6,10 @@
 # Parameters
 LOG_FILE="/DATA/log/balancecake.txt"  # Path to the main log file
 TEMP_LOG_FILE="/DATA/log/balancecaketemp.txt"  # Path to the temporary log file
-TOKEN="HERE_YOUR_TELEGRAM_TOKEN"  # Telegram bot token
-CHAT_ID="HERE_YOUR_CHATID"  # Telegram chat ID
+TOKEN="YOUR_TELEGRAM_TOKEN_HERE"  # Telegram bot token
+CHAT_ID="TELEGRAM_CHATID_HERE"  # Telegram chat ID
 FOLDER="/mnt/CAKE/"
-NAME="CAKE"
+NAME="🎂 CAKE"
 NUMBER_OF_DISKS=4
 
 # Start of the backup process

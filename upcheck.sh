@@ -18,7 +18,7 @@ SITES=(
     ["📡 Wiregard VPN"]="http://192.168.1.10:51821"
     ["🌐 ASoundMR"]="https://asoundmr.com"
     ["🌐 Goud.So"]="https://goud.so"
-    ["🌐 So Goud Home"]="https://h.goud.so"
+    ["🌐 So Goud Home"]="http://192.168.1.10:1000"
 )
 
 # File to store the statuses
@@ -26,8 +26,8 @@ LOG_FILE="/DATA/log/upcheck.txt"
 TEMP_FILE="/DATA/log/upcheck-temp.txt"
 
 # Telegram bot details
-TOKEN="HERE_YOUR_TELEGRAM_TOKEN"
-CHAT_ID="HERE_YOUR_CHATID"
+TOKEN="YOUR_TELEGRAM_TOKEN_HERE"
+CHAT_ID="TELEGRAM_CHATID_HERE"
 
 # Function to check if a website is up
 check_site() {

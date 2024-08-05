@@ -27,13 +27,13 @@ CHAT_ID="TELEGRAM_CHATID_HERE"  # Telegram chat ID
 		"/mnt/CAKE/AudioBooks|/mnt/BOREALIS/AudioBooks|🗣 AudioBooks|20000"
 		"/mnt/CAKE/Podcasts|/mnt/BOREALIS/Podcasts|🎙️ Podcast|100000"
 		"/mnt/CAKE/ASoundMR|/mnt/BOREALIS/ASoundMR|🪶 ASoundMR|250000"
-		"/mnt/CAKE/Documents|/mnt/BOREALIS/Documents|🗃️ Documents|38000"
+		"/mnt/CAKE/Documents|/mnt/BOREALIS/Documents|🗃️ Documents|38000""
 		"/mnt/CAKE/GDrive|/mnt/BOREALIS/GDrive|☁️ GDrive|8000"
 		"/mnt/CAKE/Bibliothèque|/mnt/BOREALIS/Bibliothèque|📚 Bibliothèque|7000"
 		"/mnt/CAKE/Vidéos|/mnt/BOREALIS/Vidéos|🎦 Vidéos|3000"
 		"/mnt/CAKE/Films|/mnt/BOREALIS/Films|🎬 Films|1000000"
 		"/mnt/CAKE/Séries|/mnt/BOREALIS/Séries|📺 Séries|1000000"
-
+#        "/mnt/CAKE/Logithèque|/mnt/BOREALIS/Logithèque|🗃️ Logithèque|1000000"
 	)
 
 # INITIALISATION
@@ -42,7 +42,7 @@ CHAT_ID="TELEGRAM_CHATID_HERE"  # Telegram chat ID
 	echo "" > "$ERRORS"
 	check=0
     #remove old files (never folders) from backup
-  #  find $BACKUPDIR* -mtime +$BACKUPAGE -exec rm {} \;
+    find $BACKUPDIR* -mtime +$BACKUPAGE -exec rm {} \;
 	
 # Mounting trash volume
 	sudo mount $BACKUPDIR &> /dev/null
