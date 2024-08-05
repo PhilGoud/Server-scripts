@@ -5,8 +5,8 @@ I won't think about checking things daily, so I will use Telegram to keep me upd
 ## A little background on Chell
 I use a Lenovo M73 with Debian 12 with CasaOS on top of it  
 Connected to it is :
-- 1 USB 2.0 HDD used for parity
 - 2 USB 3.0 docks composed of 4 HDDs
+- 1 USB 2.0 HDD used for Trashes from backups
   
 Most of my apps (Plex, Tranmission, AdGuard, Wireguard, HomeAssistant... ) will be in docker containers managed via CasaOS, except core system functions.
 
