@@ -1,0 +1,55 @@
+# Système de fichiers et gestion du stockage
+mergerfs
+mount
+gparted
+
+# Outils système et diagnostics
+usbutils
+pciutils
+lm-sensors
+intel-microcode
+cpufrequtils
+debianutils
+whois
+trash-cli
+qdirstat
+
+# Environnement de bureau et affichage
+xfce4
+xfce4-goodies
+xorg
+dbus-x11
+x11-xserver-utils
+xrdp
+pavucontrol
+
+# Manipulations de fichiers
+rsync
+curl
+wget
+rclone
+tar
+unzip
+
+# Outils de manipulation de texte et shell
+sed
+gawk
+grep
+jq
+coreutils
+findutils
+make
+
+
+# Multimédia
+ffmpeg
+handbrake
+handbrake-cli
+imagemagick
+yt-dlp
+youtube-dl
+
+
+
+
+
